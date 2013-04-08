@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Viidea TinyMCE Plugin</title>
+<script type="text/javascript" src="../../../wp-includes/js/tinymce/tiny_mce_popup.js"></script>
+<script type="text/javascript" src="../../../wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="js/dialog.js"></script>
+<style type="text/css">
+body,td,th,input,select {
+	font-family: Arial;
+	font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<h2 align="center">Viidea embed</h2>
+
+<form onsubmit="ViideaDialog.insert();return false;" action="#">
+<table width="600">
+  <tr>
+    <td><label for="viideaUrl">Url to video</label></td>
+    <td><input type="text" name="viideaUrl" id="viideaUrl" class="text" size="70" value="http://"/></td>
+  </tr>
+  <tr>
+    <td height="26"><label for="viideaType">Embed type</label></td>
+    <td height="26"> <select name="viideaType" id="viideaType" class="selectfont">
+      <option value="popup">Popup</option>
+      <option value="iframe">Iframe</option>
+    </select></td>
+  </tr>
+  <tr class="viideaOnly-popup">
+    <td colspan="2"><input type="checkbox" name="viideaTabs" id="viideaTabs"/><label for="viideaTabs">Show tabs (beta)</label></td>
+  </tr>
+  <tr>
+    <td colspan="2"><input type="checkbox" name="viideaHtml5" id="viideaHtml5"/><label for="viideaHtml5">Force html5 player</label></td>
+  </tr>
+  <tr class="viideaOnly-iframe">
+    <td><label for="viideaWidth">Width</label></td>
+    <td><input id="viideaWidth" name="viideaWidth" type="text" class="text" size="5" value="640" />*</td>
+  </tr>
+  <tr class="viideaOnly-iframe">
+    <td><label for="viideaHeight">Height</label></td>
+    <td><input id="viideaHeight" name="viideaHeight" type="text" class="text" size="5" value="360" />*</td>
+  </tr>
+  <tr class="error-msg" style="display:none; color:red;">
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: right;">
+    <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();"  />
+    <input type="button" class="mceButton" id="preview" name="preview" value="Preview" onclick="ViideaDialog.preview();" />
+    <input type="button" id="insert" name="insert" value="{#insert}" onclick="ViideaDialog.insert();"  />
+    </td>
+  </tr>
+</table>
+</form>
+
+<div id="viidea-preview" style="height:360px;margin:20px 0px 20px 0px;display:none;text-align:center;vertical-align:middle;">
+</div>
+
+
+</body>
+</html>
