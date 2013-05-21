@@ -65,7 +65,7 @@ function viidea_iframe_embed_shortcode($atts) {
     if ($html5 == '1') { $qs.='html5=1&'; }
     if ($type == 'popup') {
         if ($tabs == '1') { $qs.='tabs=1&'; }
-        $embed.= '<script src="'.$hostname.'/'.$slug.'/embed.js?'.$qs.'">';
+        $embed.= '<script src="'.$hostname.'/'.$slug.'/embed.js?'.$qs.'"></script>';
     } else if ($type == 'iframe') {
         $embed.= '<iframe src="'.$hostname.'/'.$slug.'/iframe/1/?'.$qs.'" width="'.$width.'" height="'.$height.'" frameborder="0" mozallowfullscreen="1" webkitallowfullscreen="1" scrolling="no"></iframe>';
     }
